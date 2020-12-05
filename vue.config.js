@@ -20,22 +20,22 @@ module.exports = {
         .end()
     }
     // 更改图片资源地址到cdn
-    config.module
-      .rule('images')
-      .test(/\.(jpe?g|png|gif|svg)$/)
-      .use('url-loader')
-      .loader('url-loader')
-      .options({
-        limit: 10000, // 单位byte，小于9kb的将转换成base64
-        // 以下配置项用于配置file-loader
-        // 根据环境使用cdn或相对路径
-        publicPath: process.env.NODE_ENV === 'production' ? 'https://cdn.xx.com/oss' : '',
-        // 将图片打包到dist/img文件夹下, 不配置则打包到dist文件夹下
-        outputPath: 'assets/img',
-        // 配置打包后图片文件名
-        name: '[name].[ext]'
-      })
-      .end()
+    // config.module
+    //   .rule('images')
+    //   .test(/\.(jpe?g|png|gif|svg)$/)
+    //   .use('url-loader')
+    //   .loader('url-loader')
+    //   .options({
+    //     limit: 10000, // 单位byte，小于9.76kb的将转换成base64
+    //     // 以下配置项用于配置file-loader
+    //     // 根据环境使用cdn或相对路径
+    //     publicPath: process.env.NODE_ENV === 'production' ? 'https://cdn.xx.com/oss' : '',
+    //     // 将图片打包到dist/img文件夹下, 不配置则打包到dist文件夹下
+    //     outputPath: 'assets/img',
+    //     // 配置打包后图片文件名
+    //     name: '[name].[ext]'
+    //   })
+    //   .end()
   },
   css: {
     // 不用在每一个页面都进行引入样式，就能直接引用。
